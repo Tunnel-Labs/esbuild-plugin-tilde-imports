@@ -3,11 +3,12 @@
 import tildeImportPlugin from '../../../../src/index.js';
 import { getMonorepoDirpath } from 'get-monorepo-root';
 import * as esbuild from 'esbuild';
-import { join } from 'desm'
+import { join } from 'desm';
 
 await esbuild.build({
-	entryPoints: ['../src/index.ts'],
-	outdir: '../dist',
+	bundle: true,
+	entryPoints: [join(import.meta.url, '../src/index.ts')],
+	outdir: join(import.meta.url, '../dist'),
 	plugins: [
 		tildeImportPlugin({ monorepoDirpath: getMonorepoDirpath(import.meta.url) })
 	]
