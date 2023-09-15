@@ -1,18 +1,21 @@
 {
-	"name": "bun-plugin-tilde-imports",
-	"version": "1.0.0",
-	"type": "module",
-	"exports": "./src/index.js",
-	"dependencies": {
-		"tilde-imports": "^3.1.0"
-	},
-	"devDependencies": {
-		"get-monorepo-root": "^1.1.0",
-		"bun": "^1.0.0"
-	},
-	"files": [
-		"readme.md",
-		"src/index.js"
-	],
-	"workspaces": []
+  "name": "esbuild-plugin-tilde-imports",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": "./src/index.js",
+  "dependencies": {
+    "tilde-imports": "^3.1.0"
+  },
+  "peerDependencies": {
+    "esbuild": "<1"
+  },
+  "devDependencies": {
+    "get-monorepo-root": "^1.1.0",
+    "esbuild": "^0.19.3"
+  },
+  "files": [
+    "readme.md",
+    "src/index.js"
+  ],
+  "workspaces": []
 }

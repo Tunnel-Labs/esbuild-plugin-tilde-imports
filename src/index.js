@@ -1,21 +1,21 @@
-import { createTildeImportExpander } from "tilde-imports";
+import { createTildeImportExpander } from 'tilde-imports';
 
 export default function tildeImportsPlugin({ monorepoDirpath }) {
-  const expandTildeImport = createTildeImportExpander({
-    monorepoDirpath,
-  });
+	const expandTildeImport = createTildeImportExpander({
+		monorepoDirpath
+	});
 
-  return {
-    name: "bun-plugin-tilde-imports",
-    setup(build) {
-      build.onResolve({ filter: /^~/ }, (args) => {
-        return {
-          path: expandTildeImport({
-            importSpecifier: args.path,
-            importerFilepath: args.importer,
-          }),
-        };
-      });
-    },
-  };
+	return {
+		name: 'esbuild-plugin-tilde-imports',
+		setup(build) {
+			build.onResolve({ filter: /^~/ }, (args) => {
+				return {
+					path: expandTildeImport({
+						importSpecifier: args.path,
+						importerFilepath: args.importer
+					})
+				};
+			});
+		}
+	};
 }

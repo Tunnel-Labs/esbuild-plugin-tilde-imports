@@ -1,11 +1,11 @@
-import tildeImportPlugin from "../../../../src/index.js";
-import { getMonorepoDirpath } from "get-monorepo-root";
-import Bun from "bun";
+import tildeImportPlugin from '../../../../src/index.js';
+import { getMonorepoDirpath } from 'get-monorepo-root';
+import * as esbuild from 'esbuild';
 
-Bun.build({
-  entrypoints: ["../src/index.ts"],
-  outdir: "../dist",
-  plugins: [
-    tildeImportPlugin({ monorepoDirpath: getMonorepoDirpath(__dirname) }),
-  ],
+esbuild.build({
+	entryPoints: ['../src/index.ts'],
+	outdir: '../dist',
+	plugins: [
+		tildeImportPlugin({ monorepoDirpath: getMonorepoDirpath(__dirname) })
+	]
 });

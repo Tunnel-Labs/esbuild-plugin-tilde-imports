@@ -1,1 +1,1 @@
-# bun-plugin-tilde-imports
+# esbuild-plugin-tilde-imports
